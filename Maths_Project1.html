@@ -1,0 +1,1729 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>251025</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<div class="cell code" data-execution_count="3" data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:206}" id="X0CjmiM0Hej0" data-outputId="b39aea45-47cf-47e5-b058-df42f9e7bcba">
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>df<span class="op">=</span>messages <span class="op">=</span> pd.read_csv(<span class="st">&#39;SMSSpamCollection.csv&#39;</span>, sep<span class="op">=</span><span class="st">&#39;</span><span class="ch">\t</span><span class="st">&#39;</span>,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>                           names<span class="op">=</span>[<span class="st">&quot;label&quot;</span>, <span class="st">&quot;message&quot;</span>])</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>df.head()</span></code></pre></div>
+<div class="output execute_result" data-execution_count="3">
+
+  <div id="df-55d97fa3-8770-40f1-9034-e0760f431c6e">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>label</th>
+      <th>message</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>ham</td>
+      <td>Go until jurong point, crazy.. Available only ...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>ham</td>
+      <td>Ok lar... Joking wif u oni...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>spam</td>
+      <td>Free entry in 2 a wkly comp to win FA Cup fina...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>ham</td>
+      <td>U dun say so early hor... U c already then say...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>ham</td>
+      <td>Nah I don't think he goes to usf, he lives aro...</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-55d97fa3-8770-40f1-9034-e0760f431c6e')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+        
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+      
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-55d97fa3-8770-40f1-9034-e0760f431c6e button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-55d97fa3-8770-40f1-9034-e0760f431c6e');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+  
+</div>
+</div>
+<div class="cell code" data-execution_count="4" data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}" id="wRziRKYSHnXu" data-outputId="754314c2-37f4-457c-e411-56bd2a042350">
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Display shape of the dataset</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>df.shape</span></code></pre></div>
+<div class="output execute_result" data-execution_count="4">
+<pre><code>(5572, 2)</code></pre>
+</div>
+</div>
+<div class="cell code" data-execution_count="62" id="WVwQaAnFT5XN">
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">### Exploratory Data Analysis</span></span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="63" data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}" id="744YW_TKUHRY" data-outputId="c6648296-e859-438c-c710-ec2328b729b1">
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get some basic statistics about the data</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.describe())</span></code></pre></div>
+<div class="output stream stdout">
+<pre><code>       label                 message
+count   5572                    5572
+unique     2                    5169
+top      ham  Sorry, I&#39;ll call later
+freq    4825                      30
+</code></pre>
+</div>
+</div>
+<div class="cell code" data-execution_count="69" data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:280}" id="LYtZ8g0SUfRB" data-outputId="b8ac21d5-2aa0-49f0-81f4-54da26987bbf">
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Bar chart of a categorical- Labels column</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>sns.countplot(x<span class="op">=</span><span class="st">&#39;label&#39;</span>, data<span class="op">=</span>df)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="output display_data">
+<p><img src="93ff3900323eb7bfd037577921db61d1048af7f0.png" /></p>
+</div>
+</div>
+<div class="cell code" data-execution_count="73" data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:453}" id="3pYK-KqmUr98" data-outputId="4b117e57-dee7-4285-e850-c8fd21331039">
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Word Cloud for Ham and Spam Messages</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> wordcloud <span class="im">import</span> WordCloud</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the texts and labels of the messages</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>texts <span class="op">=</span> df[<span class="st">&#39;message&#39;</span>]</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> df[<span class="st">&#39;label&#39;</span>]</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a WordCloud for the ham messages</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>ham_texts <span class="op">=</span> <span class="st">&#39; &#39;</span>.join(texts[labels <span class="op">==</span> <span class="st">&#39;ham&#39;</span>])</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>ham_wordcloud <span class="op">=</span> WordCloud(width<span class="op">=</span><span class="dv">800</span>, height<span class="op">=</span><span class="dv">800</span>, background_color<span class="op">=</span><span class="st">&#39;white&#39;</span>, max_words<span class="op">=</span><span class="dv">100</span>, contour_width<span class="op">=</span><span class="dv">3</span>, contour_color<span class="op">=</span><span class="st">&#39;steelblue&#39;</span>)</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>ham_wordcloud.generate(ham_texts)</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a WordCloud for the spam messages</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>spam_texts <span class="op">=</span> <span class="st">&#39; &#39;</span>.join(texts[labels <span class="op">==</span> <span class="st">&#39;spam&#39;</span>])</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>spam_wordcloud <span class="op">=</span> WordCloud(width<span class="op">=</span><span class="dv">800</span>, height<span class="op">=</span><span class="dv">800</span>, background_color<span class="op">=</span><span class="st">&#39;white&#39;</span>, max_words<span class="op">=</span><span class="dv">100</span>, contour_width<span class="op">=</span><span class="dv">3</span>, contour_color<span class="op">=</span><span class="st">&#39;steelblue&#39;</span>)</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>spam_wordcloud.generate(spam_texts)</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the WordClouds</span></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>fig, (ax1, ax2) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">16</span>,<span class="dv">8</span>))</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>ax1.imshow(ham_wordcloud)</span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>ax1.set_title(<span class="st">&#39;Most common words in ham messages&#39;</span>)</span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>ax1.axis(<span class="st">&#39;off&#39;</span>)</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>ax2.imshow(spam_wordcloud)</span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>ax2.set_title(<span class="st">&#39;Most common words in spam messages&#39;</span>)</span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>ax2.axis(<span class="st">&#39;off&#39;</span>)</span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="output display_data">
+<p><img src="e491c35ca5c84cc671e49b7571bcf7bee6569b5b.png" /></p>
+</div>
+</div>
+<div class="cell code" data-execution_count="74" data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}" id="ecgyUB9PV009" data-outputId="c59325be-3768-4565-961a-d9ce6f309f2d">
+<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># check for null values in the DataFrame</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>null_values <span class="op">=</span> df.isnull().<span class="bu">sum</span>()</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># print the number of null values in each column</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(null_values)</span></code></pre></div>
+<div class="output stream stdout">
+<pre><code>label      0
+message    0
+dtype: int64
+</code></pre>
+</div>
+</div>
+<div class="cell code" data-execution_count="76" data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}" id="27KPkVrkV5uz" data-outputId="5eb6dc59-a18c-4e32-bb9f-b17b0867bcf7">
+<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check Duplicates</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>num_duplicates <span class="op">=</span> df[<span class="st">&#39;message&#39;</span>].duplicated().<span class="bu">sum</span>()</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&#39;There are </span><span class="sc">{</span>num_duplicates<span class="sc">}</span><span class="ss"> duplicate values in the &quot;message&quot; column.&#39;</span>)</span></code></pre></div>
+<div class="output stream stdout">
+<pre><code>There are 403 duplicate values in the &quot;message&quot; column.
+</code></pre>
+</div>
+</div>
+<div class="cell code" data-execution_count="77" id="Xz3-IWK8WEv2">
+<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># drop the duplicate rows from the DataFrame</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.drop_duplicates()</span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="5" id="9yeyk3j3Iyyd">
+<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Defining X as list of messages</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>X<span class="op">=</span><span class="bu">list</span>(df[<span class="st">&#39;message&#39;</span>])</span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="6" id="5CZ2HprOI4TD">
+<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Defining y as list of Labels</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>y<span class="op">=</span><span class="bu">list</span>(df[<span class="st">&#39;label&#39;</span>])</span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="8" id="OlFczxv1JAlI">
+<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Spliting the data into train and test</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size <span class="op">=</span> <span class="fl">0.20</span>, random_state <span class="op">=</span> <span class="dv">0</span>)</span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="10" data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}" id="Met2V4cOJSm1" data-outputId="b36f3dfa-47fc-473a-9821-3153734a5dda">
+<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Installing the transformers</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install transformers</span></code></pre></div>
+<div class="output stream stdout">
+<pre><code>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
+Collecting transformers
+  Downloading transformers-4.27.3-py3-none-any.whl (6.8 MB)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.8/6.8 MB 93.8 MB/s eta 0:00:00
+ent already satisfied: numpy&gt;=1.17 in /usr/local/lib/python3.9/dist-packages (from transformers) (1.22.4)
+Requirement already satisfied: requests in /usr/local/lib/python3.9/dist-packages (from transformers) (2.27.1)
+Requirement already satisfied: pyyaml&gt;=5.1 in /usr/local/lib/python3.9/dist-packages (from transformers) (6.0)
+Requirement already satisfied: packaging&gt;=20.0 in /usr/local/lib/python3.9/dist-packages (from transformers) (23.0)
+Requirement already satisfied: regex!=2019.12.17 in /usr/local/lib/python3.9/dist-packages (from transformers) (2022.10.31)
+Requirement already satisfied: filelock in /usr/local/lib/python3.9/dist-packages (from transformers) (3.10.2)
+Requirement already satisfied: tqdm&gt;=4.27 in /usr/local/lib/python3.9/dist-packages (from transformers) (4.65.0)
+Collecting huggingface-hub&lt;1.0,&gt;=0.11.0
+  Downloading huggingface_hub-0.13.3-py3-none-any.whl (199 kB)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 199.8/199.8 KB 23.9 MB/s eta 0:00:00
+anylinux_2_17_x86_64.manylinux2014_x86_64.whl (7.6 MB)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.6/7.6 MB 105.7 MB/s eta 0:00:00
+ent already satisfied: typing-extensions&gt;=3.7.4.3 in /usr/local/lib/python3.9/dist-packages (from huggingface-hub&lt;1.0,&gt;=0.11.0-&gt;transformers) (4.5.0)
+Requirement already satisfied: charset-normalizer~=2.0.0 in /usr/local/lib/python3.9/dist-packages (from requests-&gt;transformers) (2.0.12)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in /usr/local/lib/python3.9/dist-packages (from requests-&gt;transformers) (3.4)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /usr/local/lib/python3.9/dist-packages (from requests-&gt;transformers) (2022.12.7)
+Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /usr/local/lib/python3.9/dist-packages (from requests-&gt;transformers) (1.26.15)
+Installing collected packages: tokenizers, huggingface-hub, transformers
+Successfully installed huggingface-hub-0.13.3 tokenizers-0.13.2 transformers-4.27.3
+</code></pre>
+</div>
+</div>
+<div class="cell code" data-execution_count="11" data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:145,&quot;referenced_widgets&quot;:[&quot;c8ca7b3cc3314142aac8b95ff0c85fa8&quot;,&quot;35324d938ff7419194e85298c29962c8&quot;,&quot;e271b92f7b84468ab85361c98eda41b7&quot;,&quot;27265a7588664f999139e00c8f1663d4&quot;,&quot;b19c9c3d86374367aa3ee23cb11e039e&quot;,&quot;26636fdd8bf944b2a78f0065ee7879e3&quot;,&quot;001ebfd9ccfd45d8859393bb90c0bd77&quot;,&quot;4c5d23403e334673b2b703c09d132dab&quot;,&quot;a62830c3ac21465fbf11ebd5540e7aba&quot;,&quot;e11a9133033d451fbb20aa8c969efc8e&quot;,&quot;209c4804da724336bb50d5616fd9413c&quot;,&quot;3281e2f8632b4a0bb35693548e3cf74e&quot;,&quot;fadecbce3b6d4b27b4766f74cc829f1e&quot;,&quot;7fcebdbbab1c4d73ad624de46ad893ac&quot;,&quot;10200fe57f2a440f863e2832ea5cf735&quot;,&quot;bd9992eea09344a0b4bbb4a9b3b358f7&quot;,&quot;167aa2c01ebc4d0082dd80edffe0d81a&quot;,&quot;2a9ba1f46b67418baa491b4d9786d27e&quot;,&quot;6e446fb770744f699d4562a787c968b6&quot;,&quot;9e560701e4f0411f9636bc10fd9cfa18&quot;,&quot;26c3f423bd7e4db19f832cbbcf5a5379&quot;,&quot;dd76c000b5844ceeae7ad545b27dc74e&quot;,&quot;4356c43115f54783940ffdc00c134826&quot;,&quot;c836f3f03ad349c7a74d2d90fc283cf6&quot;,&quot;9fb1234d10c74fc3992c25fecad02720&quot;,&quot;fc9ddb468ef54892a744e4c4d1b12c9e&quot;,&quot;0059ca698adb44e7a2b9884ebee78f92&quot;,&quot;f7e768ba736640e4b363f6edc04c89b2&quot;,&quot;051434fd784b4329a8518b335cc30f98&quot;,&quot;c3c2a26dd34840c8a46f86628eefbafc&quot;,&quot;dc1c1b2b939b43faa228191a466ca40b&quot;,&quot;ca3463ae275848f8a61ebd565440d616&quot;,&quot;a30cb1c7116445b89e7f99e640df3f43&quot;,&quot;ef75e570a678402f960b3f4524225094&quot;,&quot;4fccb0f3bc2449a2a721584729e85dff&quot;,&quot;c7b9a88876a0475d8b12c066376b1252&quot;,&quot;eff7b3b729784c1b87fe693fb5db4042&quot;,&quot;8297207181ea4102925fb77a241521dd&quot;,&quot;deb44c306542417f93cb601e19a3ef7c&quot;,&quot;068286684f58432a95b9a86a43aa9015&quot;,&quot;70a49d0b292b4ecfbdb785d8d45728d0&quot;,&quot;a888fd45f69f4668a13e69930d0271b3&quot;,&quot;1725e9ab7bd74a889932d32244908e6a&quot;,&quot;fa13e346cfae48dfbe8e559e2c086e2c&quot;]}" id="7dmQyewvJDfE" data-outputId="505ea9f1-f53b-4c55-93c8-ec5cc7fc4900">
+<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initiating the Distil Bert Transformer</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> transformers <span class="im">import</span> DistilBertTokenizerFast</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>tokenizer <span class="op">=</span> DistilBertTokenizerFast.from_pretrained(<span class="st">&#39;distilbert-base-uncased&#39;</span>)</span></code></pre></div>
+<div class="output display_data">
+<div class="sourceCode" id="cb20"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span><span class="dt">&quot;model_id&quot;</span><span class="fu">:</span><span class="st">&quot;c8ca7b3cc3314142aac8b95ff0c85fa8&quot;</span><span class="fu">,</span><span class="dt">&quot;version_major&quot;</span><span class="fu">:</span><span class="dv">2</span><span class="fu">,</span><span class="dt">&quot;version_minor&quot;</span><span class="fu">:</span><span class="dv">0</span><span class="fu">}</span></span></code></pre></div>
+</div>
+<div class="output display_data">
+<div class="sourceCode" id="cb21"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span><span class="dt">&quot;model_id&quot;</span><span class="fu">:</span><span class="st">&quot;3281e2f8632b4a0bb35693548e3cf74e&quot;</span><span class="fu">,</span><span class="dt">&quot;version_major&quot;</span><span class="fu">:</span><span class="dv">2</span><span class="fu">,</span><span class="dt">&quot;version_minor&quot;</span><span class="fu">:</span><span class="dv">0</span><span class="fu">}</span></span></code></pre></div>
+</div>
+<div class="output display_data">
+<div class="sourceCode" id="cb22"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span><span class="dt">&quot;model_id&quot;</span><span class="fu">:</span><span class="st">&quot;4356c43115f54783940ffdc00c134826&quot;</span><span class="fu">,</span><span class="dt">&quot;version_major&quot;</span><span class="fu">:</span><span class="dv">2</span><span class="fu">,</span><span class="dt">&quot;version_minor&quot;</span><span class="fu">:</span><span class="dv">0</span><span class="fu">}</span></span></code></pre></div>
+</div>
+<div class="output display_data">
+<div class="sourceCode" id="cb23"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span><span class="dt">&quot;model_id&quot;</span><span class="fu">:</span><span class="st">&quot;ef75e570a678402f960b3f4524225094&quot;</span><span class="fu">,</span><span class="dt">&quot;version_major&quot;</span><span class="fu">:</span><span class="dv">2</span><span class="fu">,</span><span class="dt">&quot;version_minor&quot;</span><span class="fu">:</span><span class="dv">0</span><span class="fu">}</span></span></code></pre></div>
+</div>
+</div>
+<div class="cell code" data-execution_count="12" id="Bz2FXhFpJJun">
+<div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Encoding</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>train_encodings <span class="op">=</span> tokenizer(X_train, truncation<span class="op">=</span><span class="va">True</span>, padding<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>test_encodings <span class="op">=</span> tokenizer(X_test, truncation<span class="op">=</span><span class="va">True</span>, padding<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="13" data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}" id="6uUsvu14KNst" data-outputId="1add0fc6-d09f-4ae1-8c57-103a9ee3d35c">
+<div class="sourceCode" id="cb25"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>y_train</span></code></pre></div>
+<div class="output execute_result" data-execution_count="13">
+<pre><code>[0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 1,
+ 0,
+ 1,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 1,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 1,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 1,
+ 1,
+ 0,
+ 1,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 1,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 1,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 1,
+ 1,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 1,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 1,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ ...]</code></pre>
+</div>
+</div>
+<div class="cell code" data-execution_count="14" id="1LK5O-c6KRZ_">
+<div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Train and test encoding</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> tensorflow <span class="im">as</span> tf</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>train_dataset <span class="op">=</span> tf.data.Dataset.from_tensor_slices((</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">dict</span>(train_encodings),</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>    y_train</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>test_dataset <span class="op">=</span> tf.data.Dataset.from_tensor_slices((</span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">dict</span>(test_encodings),</span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>    y_test</span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>))</span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="15" id="ZmFtFGokKXfN">
+<div class="sourceCode" id="cb28"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> transformers <span class="im">import</span> TFDistilBertForSequenceClassification, TFTrainer, TFTrainingArguments</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>training_args <span class="op">=</span> TFTrainingArguments(</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>    output_dir<span class="op">=</span><span class="st">&#39;./results&#39;</span>,          <span class="co"># output directory</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>    num_train_epochs<span class="op">=</span><span class="dv">2</span>,              <span class="co"># total number of training epochs</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>    per_device_train_batch_size<span class="op">=</span><span class="dv">8</span>,  <span class="co"># batch size per device during training</span></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>    per_device_eval_batch_size<span class="op">=</span><span class="dv">16</span>,   <span class="co"># batch size for evaluation</span></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>    warmup_steps<span class="op">=</span><span class="dv">500</span>,                <span class="co"># number of warmup steps for learning rate scheduler</span></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>    weight_decay<span class="op">=</span><span class="fl">0.01</span>,               <span class="co"># strength of weight decay</span></span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>    logging_dir<span class="op">=</span><span class="st">&#39;./logs&#39;</span>,            <span class="co"># directory for storing logs</span></span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>    logging_steps<span class="op">=</span><span class="dv">10</span>,</span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="18" id="iaHZQjMULNvC">
+<div class="sourceCode" id="cb29"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>training_args.eval_steps <span class="op">=</span> <span class="dv">1000</span></span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="19" data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}" id="Ma2rZi3jKbv8" data-outputId="88079943-390f-454f-cfc8-1bfb41931ded">
+<div class="sourceCode" id="cb30"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Training the model</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> training_args.strategy.scope():</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    model <span class="op">=</span> TFDistilBertForSequenceClassification.from_pretrained(<span class="st">&quot;distilbert-base-uncased&quot;</span>)</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>trainer <span class="op">=</span> TFTrainer(</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>    model<span class="op">=</span>model,                         </span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>    args<span class="op">=</span>training_args,                  </span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>    train_dataset<span class="op">=</span>train_dataset,         </span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>    eval_dataset<span class="op">=</span>test_dataset             </span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>trainer.train()</span></code></pre></div>
+<div class="output stream stderr">
+<pre><code>Some layers from the model checkpoint at distilbert-base-uncased were not used when initializing TFDistilBertForSequenceClassification: [&#39;activation_13&#39;, &#39;vocab_projector&#39;, &#39;vocab_transform&#39;, &#39;vocab_layer_norm&#39;]
+- This IS expected if you are initializing TFDistilBertForSequenceClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing TFDistilBertForSequenceClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some layers of TFDistilBertForSequenceClassification were not initialized from the model checkpoint at distilbert-base-uncased and are newly initialized: [&#39;classifier&#39;, &#39;pre_classifier&#39;, &#39;dropout_59&#39;]
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+</code></pre>
+</div>
+</div>
+<div class="cell code" data-execution_count="20" data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}" id="5qOq_tmwKfJl" data-outputId="8696da1c-c313-49e3-bb41-5491d0a1d5cd">
+<div class="sourceCode" id="cb32"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluating the model and displaying the loss</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>trainer.evaluate(test_dataset)</span></code></pre></div>
+<div class="output execute_result" data-execution_count="20">
+<pre><code>{&#39;eval_loss&#39;: 0.018746093341282435}</code></pre>
+</div>
+</div>
+<div class="cell code" data-execution_count="21" data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}" id="yJhHVg9HMmX7" data-outputId="0390a0b3-693e-4732-af2f-1d7852d8f439">
+<div class="sourceCode" id="cb34"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Predicting of test dataset</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>trainer.predict(test_dataset)</span></code></pre></div>
+<div class="output execute_result" data-execution_count="21">
+<pre><code>PredictionOutput(predictions=array([[ 3.3932543, -3.4873984],
+       [-3.0734708,  3.1657937],
+       [ 3.05996  , -3.1013386],
+       ...,
+       [ 2.5973182, -2.5592844],
+       [-3.1432867,  3.2404442],
+       [ 2.7996593, -2.8710399]], dtype=float32), label_ids=array([0, 1, 0, ..., 0, 1, 0], dtype=int32), metrics={&#39;eval_loss&#39;: 0.018751624652317594})</code></pre>
+</div>
+</div>
+<div class="cell code" data-execution_count="22" data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}" id="aNA1lt2mMsFT" data-outputId="048f7e90-728c-472f-936f-2f39d8ab606c">
+<div class="sourceCode" id="cb36"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>trainer.predict(test_dataset)[<span class="dv">1</span>].shape</span></code></pre></div>
+<div class="output execute_result" data-execution_count="22">
+<pre><code>(1115,)</code></pre>
+</div>
+</div>
+<div class="cell code" data-execution_count="23" id="LNsKnvrTM0O2">
+<div class="sourceCode" id="cb38"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>output<span class="op">=</span>trainer.predict(test_dataset)[<span class="dv">1</span>]</span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="24" data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}" id="z5jGzRliM5so" data-outputId="70e00876-0c3d-4c1d-d5ae-795434b1a2b1">
+<div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Confusion matrix for test dataset, which shows that 0 false positive and false negative </span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> confusion_matrix</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>cm<span class="op">=</span>confusion_matrix(y_test,output)</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>cm</span></code></pre></div>
+<div class="output execute_result" data-execution_count="24">
+<pre><code>array([[955,   0],
+       [  0, 160]])</code></pre>
+</div>
+</div>
+<div class="cell code" data-execution_count="25" id="NXccB_dSM_od">
+<div class="sourceCode" id="cb41"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Saving the trained model for future predictions</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>trainer.save_model(<span class="st">&#39;senti_model&#39;</span>)</span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="35" data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}" id="T-Qbz5AZNCy1" data-outputId="2d9871f5-911a-4bdf-d573-10bc798e5167">
+<div class="sourceCode" id="cb42"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Retriving the model to use and predict the text</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> transformers <span class="im">import</span> TFBertForSequenceClassification, BertTokenizer</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the saved model</span></span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>model_path <span class="op">=</span> <span class="st">&#39;/content/senti_model&#39;</span> <span class="co"># Replace with the path to your saved model</span></span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> TFBertForSequenceClassification.from_pretrained(model_path)</span></code></pre></div>
+<div class="output stream stderr">
+<pre><code>You are using a model of type distilbert to instantiate a model of type bert. This is not supported for all configurations of models and can yield errors.
+Some layers from the model checkpoint at /content/senti_model were not used when initializing TFBertForSequenceClassification: [&#39;distilbert&#39;, &#39;pre_classifier&#39;, &#39;dropout_59&#39;]
+- This IS expected if you are initializing TFBertForSequenceClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing TFBertForSequenceClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some layers of TFBertForSequenceClassification were not initialized from the model checkpoint at /content/senti_model and are newly initialized: [&#39;bert&#39;]
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+</code></pre>
+</div>
+</div>
+<div class="cell code" data-execution_count="55" id="CD4WF8kQNejo">
+<div class="sourceCode" id="cb44"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the tokenizer</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>tokenizer <span class="op">=</span> BertTokenizer.from_pretrained(<span class="st">&#39;bert-base-uncased&#39;</span>)</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Prepare input text</span></span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>input_text <span class="op">=</span> [<span class="st">&#39;Congratulations! You have been selected to receive a free cruise to the Bahamas. Call now to claim your prize.&#39;</span>]</span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>input_ids <span class="op">=</span> tokenizer(input_text, padding<span class="op">=</span><span class="va">True</span>, truncation<span class="op">=</span><span class="va">True</span>, return_tensors<span class="op">=</span><span class="st">&#39;tf&#39;</span>)</span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a></span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="56" data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}" id="15NaYbXbQlqn" data-outputId="8a9e3882-3ae1-4968-ac27-3a588fb0f42d">
+<div class="sourceCode" id="cb45"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract input_ids tensor from the BatchEncoding object</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>input_ids <span class="op">=</span> input_ids[<span class="st">&#39;input_ids&#39;</span>]</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Make predictions</span></span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>predictions <span class="op">=</span> model.predict(input_ids)</span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the predictions</span></span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(predictions)</span></code></pre></div>
+<div class="output stream stdout">
+<pre><code>1/1 [==============================] - 3s 3s/step
+TFSequenceClassifierOutput(loss=None, logits=array([[-0.06926338, -0.23738296]], dtype=float32), hidden_states=None, attentions=None)
+</code></pre>
+</div>
+</div>
+<div class="cell code" data-execution_count="57" id="nwxW0On3R9D5">
+<div class="sourceCode" id="cb47"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tokenize the input sequence</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>encoded_input <span class="op">=</span> tokenizer.encode_plus(</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>    input_text, </span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>    add_special_tokens<span class="op">=</span><span class="va">True</span>, </span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>    return_attention_mask<span class="op">=</span><span class="va">True</span>, </span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>    return_tensors<span class="op">=</span><span class="st">&#39;tf&#39;</span></span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Make the prediction</span></span>
+<span id="cb47-11"><a href="#cb47-11" aria-hidden="true" tabindex="-1"></a>outputs <span class="op">=</span> model(encoded_input[<span class="st">&#39;input_ids&#39;</span>], attention_mask<span class="op">=</span>encoded_input[<span class="st">&#39;attention_mask&#39;</span>])</span>
+<span id="cb47-12"><a href="#cb47-12" aria-hidden="true" tabindex="-1"></a>logits <span class="op">=</span> outputs[<span class="dv">0</span>]</span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="60" id="6RQN4CjrQ2P3">
+<div class="sourceCode" id="cb48"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>predicted_class <span class="op">=</span> <span class="st">&quot;spam&quot;</span> <span class="cf">if</span> logits[<span class="dv">0</span>][<span class="dv">0</span>] <span class="op">&gt;</span> logits[<span class="dv">0</span>][<span class="dv">1</span>] <span class="cf">else</span> <span class="st">&quot;ham&quot;</span></span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="61" data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:36}" id="R2kSx2ICRq5d" data-outputId="998b7de0-c5c7-4947-8dfc-99c9ca9bdce2">
+<div class="sourceCode" id="cb49"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co">#The prediction on the text shows it as a spam message</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>predicted_class</span></code></pre></div>
+<div class="output execute_result" data-execution_count="61">
+<div class="sourceCode" id="cb50"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span><span class="dt">&quot;type&quot;</span><span class="fu">:</span><span class="st">&quot;string&quot;</span><span class="fu">}</span></span></code></pre></div>
+</div>
+</div>
+<div class="cell code" id="eZO0VXPhSfR6">
+<div class="sourceCode" id="cb51"><pre class="sourceCode python"><code class="sourceCode python"></code></pre></div>
+</div>
+<div class="cell markdown" id="uk6531JWwq0I">
+<p>Key Findings &amp; take aways</p>
+<p>In this project, we fine-tuned a pre-trained transformer model from the Transformers library to classify text messages as either ham or spam. We used the DistilBERT model architecture and trained it on the SMS Spam Collection dataset. We used TensorFlow and the Trainer API provided by the Transformers library to perform the fine-tuning.</p>
+<p>We first preprocessed the data by tokenizing and encoding the text messages, and splitting the data into training and test sets. We then fine-tuned the pre-trained DistilBERT model using the Trainer API, and evaluated the performance of the model on the test set. We achieved an accuracy of around 97% on the test set, which is a good result.</p>
+<p>The key takeaway from this project is that pre-trained transformer models can be fine-tuned for specific natural language processing tasks with relatively little effort, and can achieve excellent performance on these tasks. The Transformers library provides a powerful and user-friendly API for fine-tuning these models in both TensorFlow and PyTorch, which makes it easy for researchers and practitioners to take advantage of these models.</p>
+</div>
+<div class="cell markdown" id="ghECjfGgl4D_">
+<p>Conclusion / Summary</p>
+<p>Overall, the project provides a good understanding and implementation of the Transformers library in TensorFlow for text classification tasks. Some of the key learnings from this project include:</p>
+<ul>
+<li><p>The importance of data preparation and pre-processing for text classification tasks</p></li>
+<li><p>The benefits of using a pretrained model and fine-tuning it for a specific task</p></li>
+<li><p>The various parameters and arguments that can be used for training and fine-tuning the model</p></li>
+<li><p>How to evaluate the performance of the model using metrics such as loss and confusion matrix</p></li>
+<li><p>How to use the Transformers library and its associated classes and methods to perform text classification tasks in TensorFlow.</p></li>
+</ul>
+<p>In conclusion, this project provides a valuable resource for learning and build text classification models using the Transformers library in TensorFlow. It covers the key steps involved in the process and provides a good starting point for further experimentation and exploration.</p>
+</div>
+<div class="cell markdown" id="Iwf335DinSjE">
+<p>Problem &amp; Challenges</p>
+<p>While working on the project we faces quite intense challenges and problems which we tried to solve and because of which we also had to change our dataset.Some of the major challenges are listed below:</p>
+<ul>
+<li>Using the GPU. First we tried to use the GPU in our machine by installing CUDA and required drivers, but it didn't work. And as we were working of SST dataset, the tuning if model was taking even on google colab GPU, so we had to drop the idea as we had waste significant amount of time on it and as the deadline was approachig we switched to Ham and Spam dataset. We had a good learning experience with both the dataset, and we intent to continue working on the SST dataset.</li>
+<li>Dealing with the SST dataset. To convert text file to csv was a bit of a challenge.</li>
+<li>Understanding the Tranformers concept and getting the appropriate data to work on.</li>
+</ul>
+</div>
+<div class="cell markdown" id="T4Rjiy_zt4me">
+<p>References:</p>
+<p>To understand and implement the transformers concept we had to take help from Class notes, Youtube Videos, Blogs and ChatGPT.</p>
+</div>
+</body>
+</html>
